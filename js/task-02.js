@@ -15,23 +15,72 @@ const ingredients = [
   "Condiments",
 ];
 
-// const newArrayEl = ingredients.forEach((element) => {
+// const element = ingredients[0];
+// console.log(element);
+
+// const newEl = document.createElement("li");
+// // console.log(newEl);
+// newEl.classList.add("item");
+// // console.log(newEl);
+// newEl.textContent = element;
+// console.log(newEl);
+
+// for (let i = 0; i < ingredients.length; i += 1) {
+//   console.table(ingredients[i]);
+// }
+//! ////////////////////////////////////////////////////////////
+// //todo знайти Юл
+const ingradientsEl = document.querySelector("#ingredients");
+
+///todo масив Лі
+const elementsUl = [];
+
+for (let i = 0; i < ingredients.length; i += 1) {
+  console.log(ingredients[i]);
+
+  const newEl = document.createElement("li");
+  newEl.classList.add("item");
+  newEl.textContent = ingredients[i];
+
+  //   //todo додаємо до масиву всі Лі
+  elementsUl.push(newEl);
+}
+console.log(elementsUl);
+
+// //todo додати Лі до Юл (розпилюємо масив на окремі елементи)
+ingradientsEl.append(...elementsUl);
+//! /////////////////////////////////////////////////////////////
+//? альтернативний запис =====================================
+// //todo знайти Юл
+// const ingradientsEl = document.querySelector("#ingredients");
+
+// const elementsUl = ingredients.map((element) => {
 //   const newEl = document.createElement("li");
 //   newEl.classList.add("item");
 //   newEl.textContent = element;
+
+//   return newEl;
 // });
-// console.log(newArrayEl);
 
-/////////////
-const newEl = document.createElement("li");
-// console.log(newEl);
+// // todo додати Лі до Юл (розпилюємо масив на окремі елементи)
+// ingradientsEl.append(...elementsUl);
 
-newEl.classList.add("item");
-// console.log(newEl);
+//! /////////////////////////////////////////////////////////////
+//? запис у вигляді функції =====================================
+// //todo знайти Юл
+// const ingradientsEl = document.querySelector("#ingredients");
 
-newEl.textContent = ingredients[i];
-console.log(newEl);
+// const makeIngredients = (elements) => {
+//   return elements.map((element) => {
+//     const newEl = document.createElement("li");
+//     newEl.classList.add("item");
+//     newEl.textContent = element;
 
-for (let i = 0; i < ingredients.length; i += 1) {
-  console.table((newEl.textContent = ingredients[i]));
-}
+//     return newEl;
+//   });
+// };
+
+// const element = makeIngredients(ingredients);
+
+// // todo додати Лі до Юл (розпилюємо масив на окремі елементи)
+// ingradientsEl.append(...element);
