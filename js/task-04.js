@@ -31,21 +31,23 @@ const totalNumber = document.getElementById("value");
 console.log(totalNumber);
 
 //! 1) Створи змінну counterValue її значенням 0.
-const counterValue = 0;
+let counterValue = 0;
 // console.log(counterValue);
 
 //! 2) Додати слухачів кліків до кнопок які збільшують або зменшують значення лічильника
 addBtn.addEventListener("click", () => {
-  console.log((counterValue += 1));
+  console.log(1);
 });
 console.log(addBtn);
 
 subtractionBtn.addEventListener("click", () => {
-  console.log("click");
+  console.log(2);
 });
 console.log(subtractionBtn);
 
 //! 3) Оновлюй інтерфейс новим значенням змінної counterValue.
+////////////////////////////////////////
+// const calc() => (value => counterValue += value + 1);
 
 /////////////////////////////////////////////////////
 // addBtn = "+";
@@ -53,17 +55,21 @@ console.log(subtractionBtn);
 // subtractionBtn = "-";
 // console.log(subtractionBtn);
 
-function calc() {
-  switch ((addBtn, subtractionBtn)) {
-    case addBtn:
+addBtn = 1;
+subtractionBtn = 1;
+
+function calc(value) {
+  switch (value) {
+    case value === addBtn:
       counterValue += 1;
       break;
 
-    case subtractionBtn:
+    case value === subtractionBtn:
       counterValue -= 1;
       break;
   }
 }
+console.log(calc(addBtn));
 ////////////////////////////////////////////
 // let num1 = prompt("первое число");
 // num1 = Number(num1);
