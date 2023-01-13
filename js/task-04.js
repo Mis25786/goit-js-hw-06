@@ -32,32 +32,21 @@ console.log(totalNumber);
 
 //! 1) Створи змінну counterValue її значенням 0.
 let counterValue = 0;
-// console.log(counterValue);
+console.log(counterValue);
 
 //! 2) Додати слухачів кліків до кнопок які збільшують або зменшують значення лічильника
-addBtn.addEventListener("click", () => {
-  console.log(1);
-});
+addBtn.addEventListener("click", calc);
 console.log(addBtn);
 
-subtractionBtn.addEventListener("click", () => {
-  console.log(2);
-});
+subtractionBtn.addEventListener("click", calc);
 console.log(subtractionBtn);
 
 //! 3) Оновлюй інтерфейс новим значенням змінної counterValue.
+counterValue = totalNumber;
 ////////////////////////////////////////
-// const calc() => (value => counterValue += value + 1);
+// const calc = (value) => (value => {value.addBtn += counterValue || value.subtractionBtn -= counterValue }});
 
 /////////////////////////////////////////////////////
-// addBtn = "+";
-// console.log(addBtn);
-// subtractionBtn = "-";
-// console.log(subtractionBtn);
-
-addBtn = 1;
-subtractionBtn = 1;
-
 function calc(value) {
   switch (value) {
     case value === addBtn:
@@ -68,8 +57,10 @@ function calc(value) {
       counterValue -= 1;
       break;
   }
+  // return counterValue;
 }
-console.log(calc(addBtn));
+// console.log(calc(addBtn));
+// console.log(calc(subtractionBtn));
 ////////////////////////////////////////////
 // let num1 = prompt("первое число");
 // num1 = Number(num1);
