@@ -28,75 +28,56 @@ const subtractionBtn = document.querySelector('[data-action="decrement"]');
 // console.log(subtractionBtn);
 
 const totalNumber = document.getElementById("value");
-console.log(totalNumber);
+// // console.log(totalNumber);
 
-//! 1) Створи змінну counterValue її значенням 0.
+// //! 1) Створи змінну counterValue її значенням 0.
 let counterValue = 0;
-console.log(counterValue);
+// console.log("тут лічильник:", counterValue);
 
-//! 2) Додати слухачів кліків до кнопок які збільшують або зменшують значення лічильника
-addBtn.addEventListener("click", calc);
-console.log(addBtn);
+// //! 2) Додати слухачів кліків до кнопок які збільшують або зменшують значення лічильника
+addBtn.addEventListener("click", plusBtn);
+// console.log(addBtn);
 
-subtractionBtn.addEventListener("click", calc);
-console.log(subtractionBtn);
+subtractionBtn.addEventListener("click", minusBtn);
+// console.log(subtractionBtn);
 
-//! 3) Оновлюй інтерфейс новим значенням змінної counterValue.
-counterValue = totalNumber;
-////////////////////////////////////////
-// const calc = (value) => (value => {value.addBtn += counterValue || value.subtractionBtn -= counterValue }});
+// //! 3) Оновлюй інтерфейс новим значенням змінної counterValue.
+// // console.log(totalNumber);
 
-/////////////////////////////////////////////////////
-function calc(value) {
-  switch (value) {
-    case value === addBtn:
-      counterValue += 1;
-      break;
-
-    case value === subtractionBtn:
-      counterValue -= 1;
-      break;
-  }
-  // return counterValue;
+function plusBtn(event) {
+  counterValue += 1;
+  totalNumber.textContent = counterValue;
 }
-// console.log(calc(addBtn));
-// console.log(calc(subtractionBtn));
+function minusBtn() {
+  counterValue -= 1;
+  totalNumber.textContent = counterValue;
+}
+// /////////////////////////////////////////////////////
+// function calc(value) {
+//   switch (value) {
+//     case increment:
+//       console.log(value);
+//       counterValue += 1;
+//       break;
+
+//     case decrement:
+//       console.log(value);
+//       counterValue -= 1;
+//       break;
+//   }
+//   return counterValue;
+//   console.log(counterValue);
+// }
+
+// function plusBtn(event) {
+//   console.log(event.currentTarget.dataset.action);
+//   counterValue += 1;
+//   totalNumber.textContent = counterValue;
+// }
+// function minusBtn(event) {
+//   console.log(event.currentTarget.dataset.action);
+//   counterValue -= 1;
+//   totalNumber.textContent = counterValue;
+// }
+
 ////////////////////////////////////////////
-// let num1 = prompt("первое число");
-// num1 = Number(num1);
-
-// let num2 = prompt("второе число");
-// num2 = Number(num2);
-
-// let operator = prompt("оператор (/,+,*,-)");
-
-// switch (operator) {
-//   case "+":
-//     console.log(num1 + num2);
-//     break;
-//   case "-":
-//     console.log(num1 - num2);
-// }
-///////////////////////////////////////////
-// let cost;
-// const subscription = "premium";
-
-// switch (subscription) {
-//   case "free":
-//     cost = 0;
-//     break;
-
-//   case "pro":
-//     cost = 100;
-//     break;
-
-//   case "premium":
-//     cost = 500;
-//     break;
-
-//   default:
-//     console.log("Invalid subscription type");
-// }
-
-// console.log(cost); // 500
-//////////////////////////////////////////
