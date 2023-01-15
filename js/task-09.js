@@ -16,32 +16,23 @@
 // }
 
 //*=======================================================
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+//*======================================================
 
 const button = document.querySelector(".change-color");
-console.log(button);
+// console.log(button);
 
-button.addEventListener("clic", changeColor);
+button.addEventListener("click", changeColor);
 
 const spanColorText = document.querySelector(".color");
 // console.log(spanColorText);
 
 function changeColor(event) {
   event.preventDefault();
-  console.log("object");
-  console.log(event.currentTarget);
 
-  // const backgraundColorBody = document.body.style.backgroundColor;
-  // console.dir(backgraundColorBody);
+  document.body.style.backgroundColor = getRandomHexColor();
 
-  //=========================================
-  // currentTarget = getRandomHexColor();
-  //==========================================
-  // function getRandomHexColor() {
-  //   return (backgraundColorBody = `#${Math.floor(
-  //     Math.random() * 16777215
-  //   ).toString(16)}`);
-  // }
-  //=========================================
-
-  // spanColorText.textContent = backgraundColorBody;
+  spanColorText.textContent = document.body.style.backgroundColor;
 }

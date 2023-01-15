@@ -17,5 +17,6 @@ input.addEventListener("input", changeTextSpan);
 console.log(input);
 
 function changeTextSpan(event) {
-  console.log((span.style.fontSize = `${event.currentTarget.value}px`));
+  // console.log((span.style.fontSize = `${event.currentTarget.value}px`));
+  console.log((span.style.fontSize = event.currentTarget.value + "px"));
 }
