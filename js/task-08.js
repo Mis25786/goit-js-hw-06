@@ -39,20 +39,6 @@ function onSubmitForm(event) {
   const formEl = event.currentTarget.elements;
   //   console.log(formEl);
 
-  if (formEl.email.value === "" || formEl.password.value === "") {
-    alert("Заповніть будь-ласка всі поля");
-  }
-  //*============================================
-  //   if (formEl.email.value === "") {
-  //     alert("Заповніть будь-ласка всі поля");
-  //   } else if (formEl.password.value === "") {
-  //     alert("Заповніть будь-ласка всі поля");
-  //   }
-  //*============================================
-  //     formEl.email.value == "" && formEl.name.value == ""
-  //       ? "Заповніть будь-ласка всі поля"
-  //       : що потрібно тут? ;
-
   //* задається => typ
   const email = formEl.email.value;
   //   console.log(email);
@@ -64,8 +50,32 @@ function onSubmitForm(event) {
     password,
   };
 
+  if (formEl.email.value === "" || formEl.password.value === "") {
+    alert("Заповніть будь-ласка всі поля");
+  } else if (
+    formEl.email.value === email ||
+    formEl.password.value === password
+  ) {
+    console.log(formData);
+  }
+  //*============================================
+  // if (formEl.email.value === "" || formEl.password.value === "") {
+  //   alert("Заповніть будь-ласка всі поля");
+  // }
+  //*============================================
+  //   if (formEl.email.value === "") {
+  //     alert("Заповніть будь-ласка всі поля");
+  //   } else if (formEl.password.value === "") {
+  //     alert("Заповніть будь-ласка всі поля");
+  //   }
+  //*============================================
+  // const auditInput =
+  //   formEl.email.value == "" || formEl.name.value == ""
+  //     ? "Заповніть будь-ласка всі поля"
+  //     : console.log(formData);
+
   //* виводимо об'єкт з данними в консоль
-  console.log(formData);
+  // console.log(formData);
 
   //* очистити всі поля form
   form.reset();

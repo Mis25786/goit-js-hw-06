@@ -16,17 +16,17 @@ input.addEventListener("input", onInputChange);
 const span = document.getElementById("name-output");
 console.log(span);
 
-function onInputChange(event) {
-  console.dir(event.currentTarget.value);
-  span.textContent = event.currentTarget.value;
-}
+// function onInputChange(event) {
+//   console.dir(event.currentTarget.value);
+//   span.textContent = event.currentTarget.value;
+// }
 
 //?================================ або ==============
 
-// function onInputChange(event) {
-//   if (event.currentTarget.value === "") {
-//     span.textContent = "Anonymous";
-//   } else {
-//     span.textContent = event.currentTarget.value;
-//   }
-// }
+function onInputChange(event) {
+  if (event.currentTarget.value === "") {
+    span.textContent = "Anonymous";
+  } else {
+    span.textContent = event.currentTarget.value;
+  }
+}
